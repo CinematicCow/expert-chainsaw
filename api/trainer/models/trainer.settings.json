@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trainers",
+  "info": {
+    "name": "Trainer"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "createdAt": {
+      "type": "date",
+      "private": true,
+      "required": false
+    }
+  }
+}
